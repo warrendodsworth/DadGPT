@@ -2,6 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from dotenv import find_dotenv, load_dotenv
 import os
 import streamlit as st
+import torch
 
 # Set the page configuration as the first Streamlit command
 st.set_page_config(page_title="Smush Date", page_icon="♥️")
@@ -12,6 +13,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 # Load environment variables
 load_dotenv(find_dotenv())
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+device = 0 if torch.backends.mps.is_available() else -1
 
 
 # Load the Hugging Face model for conversational AI (e.g., GPT-2, GPT-3 fine-tuned)
@@ -19,12 +21,18 @@ HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 def load_model():
     tokenizer = AutoTokenizer.from_pretrained(
         "google/gemma-2-2b-it",
-        device_map="auto",
+        padding_side="left",
     )
     model = AutoModelForCausalLM.from_pretrained(
         "google/gemma-2-2b-it",
     )
-    nlp_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer)
+    nlp_pipeline = pipeline(
+        "text-generation",
+        model=model,
+        tokenizer=tokenizer,
+        token=HUGGINGFACEHUB_API_TOKEN,
+        device=device,
+    )
     return nlp_pipeline
 
 
@@ -83,6 +91,3 @@ st.text_input(
     key="user_input",
     on_change=lambda: (generate_response(st.session_state.user_input), clear_input()),
 )
-
-# st.write("**Bot**")
-# st.write(response)
