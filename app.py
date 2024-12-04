@@ -17,8 +17,13 @@ HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 # Load the Hugging Face model for conversational AI (e.g., GPT-2, GPT-3 fine-tuned)
 @st.cache_resource
 def load_model():
-    tokenizer = AutoTokenizer.from_pretrained("gpt2")
-    model = AutoModelForCausalLM.from_pretrained("gpt2")
+    tokenizer = AutoTokenizer.from_pretrained(
+        "google/gemma-2-2b-it",
+        device_map="auto",
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        "google/gemma-2-2b-it",
+    )
     nlp_pipeline = pipeline("text-generation", model=model, tokenizer=tokenizer)
     return nlp_pipeline
 
