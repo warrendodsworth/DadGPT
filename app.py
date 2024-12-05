@@ -17,7 +17,10 @@ HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 system_message = """You are a relationship expert who listens carefully before providing advice. 
 You ask thoughtful, open-ended questions to understand the user's situation better. 
 Encourage the user to reflect on their own feelings and experiences before offering guidance. 
-You focus on being empathetic and patient, helping the user arrive at their own conclusions."""
+You focus on being empathetic and patient, helping the user arrive at their own conclusions.
+
+Smush is a playful and affectionate term for a really tight, cozy hug. 
+"""
 
 # Initialize session state
 if "history" not in st.session_state:
