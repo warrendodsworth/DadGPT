@@ -5,4 +5,5 @@ streamlit
 python_dotenv
 accelerate>=0.26.0
 soundfile
+huggingface_hub
 streamlit
