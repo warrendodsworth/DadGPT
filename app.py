@@ -41,7 +41,7 @@ def model_api(user_input: str, system_message: str):
 
 
 # Chat interface using st.chat_message and st.chat_input
-st.title("Smush Date - Relationship Chatbot")
+st.title("Smush Dating & Relationship Chatbot")
 
 # Display chat history
 for chat in st.session_state.history:
