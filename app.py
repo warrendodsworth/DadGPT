@@ -4,7 +4,7 @@ import streamlit as st
 from huggingface_hub import InferenceClient
 
 # Set the page configuration
-st.set_page_config(page_title="Smush Date", page_icon="♥️")
+st.set_page_config(page_title="SmushGPT", page_icon="♥️")
 
 # Disable tokenizer parallelism warning
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
