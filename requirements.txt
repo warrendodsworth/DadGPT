@@ -1,7 +1,8 @@
 transformers
 torch
 datasets
-soundfile
 streamlit
 python_dotenv
-accelerate
+accelerate>=0.26.0
+soundfile
+streamlit
