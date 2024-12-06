@@ -13,6 +13,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 load_dotenv(find_dotenv())
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
+
 # Add context for the chatbot to be a good listener
 system_message = """You are a relationship expert who listens carefully before providing advice. 
 You ask thoughtful, open-ended questions to understand the user's situation better. 
