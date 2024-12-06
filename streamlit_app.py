@@ -28,7 +28,7 @@ demo_key = (
     if "STREAMLIT_APP_HOST" in os.environ
     else os.getenv("DEMO_TOKEN")
 )
-print("DEMO KEY:", demo_key)
+st.write("DEMO KEY:", demo_key)
 
 
 # Add context for the chatbot to be a good listener
