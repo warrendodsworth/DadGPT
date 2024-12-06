@@ -23,14 +23,6 @@ def get_huggingface_token():
 
 HUGGINGFACEHUB_API_TOKEN = get_huggingface_token()
 
-demo_key = (
-    st.secrets["DEMO_TOKEN"]
-    if "STREAMLIT_APP_HOST" in os.environ
-    else os.getenv("DEMO_TOKEN")
-)
-st.write("DEMO KEY:", demo_key)
-
-
 # Add context for the chatbot to be a good listener
 system_message = """You are a relationship expert who listens carefully before providing advice. 
 You ask thoughtful, open-ended questions to understand the user's situation better. 
