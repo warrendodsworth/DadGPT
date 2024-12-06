@@ -12,6 +12,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 # Load environment variables
 load_dotenv(find_dotenv())
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+print("DEMO KEY: ", os.getenv("DEMO_TOKEN"))
 
 
 # Add context for the chatbot to be a good listener
