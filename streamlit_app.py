@@ -11,8 +11,24 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # Load environment variables
 load_dotenv(find_dotenv())
-HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
-print("DEMO KEY: ", os.getenv("DEMO_TOKEN"))
+
+
+def get_huggingface_token():
+    # Check which environment it's running on and get token accordingly
+    if "STREAMLIT_APP_HOST" in os.environ:
+        return st.secrets["HUGGINGFACE_API_TOKEN"]
+    else:
+        return os.getenv("HUGGINGFACE_API_TOKEN")
+
+
+HUGGINGFACEHUB_API_TOKEN = get_huggingface_token()
+
+demo_key = (
+    st.secrets["DEMO_TOKEN"]
+    if "STREAMLIT_APP_HOST" in os.environ
+    else os.getenv("DEMO_TOKEN")
+)
+print("DEMO KEY:", demo_key)
 
 
 # Add context for the chatbot to be a good listener
