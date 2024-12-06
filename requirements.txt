@@ -2,7 +2,7 @@ transformers
 torch
 datasets
 streamlit
-python_dotenv
+python-dotenv
 accelerate>=0.26.0
 soundfile
 huggingface_hub
