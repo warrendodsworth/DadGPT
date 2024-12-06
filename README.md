@@ -5,7 +5,7 @@ colorFrom: indigo
 colorTo: pink
 sdk: streamlit
 sdk_version: 1.40.2
-app_file: app.py
+app_file: streamlit_app.py
 pinned: false
 short_description: Quick dating & relationship advice.
 ---
