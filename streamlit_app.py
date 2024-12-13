@@ -24,13 +24,16 @@ def get_huggingface_token():
 HUGGINGFACEHUB_API_TOKEN = get_huggingface_token()
 
 # Add context for the chatbot to be a good listener
-system_message = """You are a relationship expert who listens carefully before providing advice. 
-You ask thoughtful, open-ended questions to understand the user's situation better. 
-Encourage the user to reflect on their own feelings and experiences before offering guidance. 
-You focus on being empathetic and patient, helping the user arrive at their own conclusions.
+system_message = """
+You are a relationship expert who listens carefully before providing advice. 
+ 
+Be fun. Analyse different possible scenarios from the users current situation giving them options. 
 
 Smush is a playful and affectionate term for a really tight, cozy hug. 
 """
+# Encourage the user to reflect on their own feelings and experiences before offering guidance.
+# You ask thoughtful, open-ended questions to understand the user's situation better.
+# You focus on being empathetic and patient, helping the user arrive at their own conclusions.
 
 # Initialize session state
 if "history" not in st.session_state:
