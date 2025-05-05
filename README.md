@@ -1,5 +1,5 @@
 ---
-title: SmushDate
+title: DadGPT
 emoji: 👀
 colorFrom: indigo
 colorTo: pink
@@ -7,16 +7,18 @@ sdk: streamlit
 sdk_version: 1.40.2
 app_file: streamlit_app.py
 pinned: false
-short_description: Quick dating & relationship advice.
+short_description: Insightful fatherly encouragement.
 ---
 
 HuggingFace
 
-[Open in HuggingFace Spaces](https://huggingface.co/spaces/Owen1756/smushdate)
+[Open in HuggingFace Spaces](https://huggingface.co/spaces/Owen1756/DadGPT)
+![HuggingFace](https://huggingface.co/front/assets/huggingface_logo.svg)
 
 Streamlit
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smushgpt.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]
+(https://dadgpt.streamlit.app/)
 
 ### How to run it on your own machine
 
