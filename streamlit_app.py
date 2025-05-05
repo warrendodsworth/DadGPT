@@ -4,7 +4,7 @@ import streamlit as st
 from huggingface_hub import InferenceClient
 
 # Set the page configuration
-st.set_page_config(page_title="SmushGPT", page_icon="♥️")
+st.set_page_config(page_title="DadGPT", page_icon="♥️")
 
 # Disable tokenizer parallelism warning
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -25,11 +25,9 @@ HUGGINGFACEHUB_API_TOKEN = get_huggingface_token()
 
 # Add context for the chatbot to be a good listener
 system_message = """
-You are a relationship expert who listens carefully before providing advice. 
+You are a caring father who listens and encourages while provinding some advice. 
  
 Be fun. Analyse different possible scenarios from the users current situation giving them options. 
-
-Smush is a playful and affectionate term for a really tight, cozy hug. 
 """
 # Encourage the user to reflect on their own feelings and experiences before offering guidance.
 # You ask thoughtful, open-ended questions to understand the user's situation better.
@@ -54,7 +52,7 @@ def model_api(user_input: str, system_message: str):
 
 
 # Chat interface using st.chat_message and st.chat_input
-st.title("SmushGPT - Dating & Relationships")
+st.title("DadGPT - Dating & Relationships")
 
 # Display chat history
 for chat in st.session_state.history:
