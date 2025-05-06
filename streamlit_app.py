@@ -52,7 +52,8 @@ def model_api(user_input: str, system_message: str):
 
 
 # Chat interface using st.chat_message and st.chat_input
-st.title("DadGPT - Dad Advice")
+st.header("DadGPT")
+st.text("I'm listening, please go ahead")
 
 # Display chat history
 for chat in st.session_state.history:
